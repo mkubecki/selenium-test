@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/mkubecki/selenium-test.git/tree/main'
+                git 'https://github.com/mkubecki/selenium-test/tree/main'
             }
         }
         stage('Install Dependencies') {
