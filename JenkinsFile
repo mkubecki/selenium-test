@@ -20,9 +20,9 @@ pipeline {
             steps {
                 publishHTML(target: [
                     allowMissing: false,
-                    alwaysLinkToLastBuild: true,
+                    alwaysLinkToLastBuild: false,
                     keepAll: true,
-                    reportDir: '',
+                    reportDir: '.',
                     reportFiles: 'report.html',
                     reportName: 'Test Report'
                 ])
