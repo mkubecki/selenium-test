@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh '/usr/local/bin/pip install -r requirements.txt'
+                sh 'pip3 install -r requirements.txt'
             }
         }
         stage('Run Tests') {
             steps {
-                sh '/Library/Frameworks/Python.framework/Versions/3.12/bin/pytest --html=report.html --self-contained-html'
+                sh 'pytest --html=report.html --self-contained-html'
             }
         }
         stage('Publish Report') {
