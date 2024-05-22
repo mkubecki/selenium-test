@@ -16,17 +16,17 @@ pipeline {
                 sh '/Library/Frameworks/Python.framework/Versions/3.12/bin/pytest --html=report.html'
             }
         }
-
-        post {
-            always{
-                 publishHTML([allowMissing: false,
-                             alwaysLinkToLastBuild: true,
-                             keepAll: true,
-                             reportDir: '.',
-                             reportFiles: 'report.html',
-                             reportName: 'HTML Report',
-                             reportTitles: 'Test Report'])
-            }
-        }
     }
+
+    post {
+        always {
+            publishHTML([allowMissing: false,
+                         alwaysLinkToLastBuild: true,
+                         keepAll: true,
+                         reportDir: '.',
+                         reportFiles: 'report.html',
+                         reportName: 'HTML Report',
+                         reportTitles: 'Test Report'])
+        }
+
 }
