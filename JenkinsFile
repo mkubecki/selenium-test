@@ -8,11 +8,13 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'pip3 install -r requirements.txt'
+                sh 'pip3pyt  install -r requirements.txt'
             }
         }
         stage('Run Tests') {
             steps {
+                sh 'which pytest'
+                sh 'echo "test"'
                 sh 'pytest --html=report.html --self-contained-html'
             }
         }
