@@ -16,9 +16,10 @@ pipeline {
                 sh '/Library/Frameworks/Python.framework/Versions/3.12/bin/pytest --html=report.html'
             }
         }
-        stage('Publish Report') {
-            steps {
-                publishHTML([allowMissing: false,
+
+        post {
+            always{
+                 publishHTML([allowMissing: false,
                              alwaysLinkToLastBuild: true,
                              keepAll: true,
                              reportDir: '.',
