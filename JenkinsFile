@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'pytest --html=report.html'
+                sh '/Library/Frameworks/Python.framework/Versions/3.12/bin/pytest --html=report.html'
             }
         }
         stage('Publish Report') {
